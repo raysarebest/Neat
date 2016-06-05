@@ -1,2 +1,2 @@
 # Neat
-Because Tomato bought Urbanspoon and killed the random restaurant finder feature
+Because Zomato bought Urbanspoon and killed the random restaurant finder feature
