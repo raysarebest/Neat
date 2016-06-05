@@ -9,19 +9,53 @@
 import Foundation
 import CoreLocation
 
-public class MHLocationManager: NSObject, CLLocationManagerDelegate{
+public class MHGPS: NSObject, CLLocationManagerDelegate{
 
     //MARK: - Helper Enumerations
 
-    public enum MHAuthorizationChangeKeys: String{
-        case Notification = "MHAuthorizationDidChangeNotification"
-        case NewStatus = "MHAuthorizationDidChangeNotificationNewStatusKey"
-    }
-
-    public enum MHLocationAuthorizationError: ErrorType{
-        case ParentallyDisabled
-        case ReasonNotSet
-        case UserDenied
+    public enum MHLocationAccuracy: CLLocationAccuracy{
+        case Navigation
+        case VeryAccurate
+        case TenMeters
+        case HundredMeters
+        case Kilometer
+        case ThreeKilometers
+        public var rawValue: CLLocationAccuracy{
+            get{
+                switch self{
+                    case .Navigation:
+                        return kCLLocationAccuracyBestForNavigation
+                    case .VeryAccurate:
+                        return kCLLocationAccuracyBest
+                    case .TenMeters:
+                        return kCLLocationAccuracyNearestTenMeters
+                    case .HundredMeters:
+                        return kCLLocationAccuracyHundredMeters
+                    case .Kilometer:
+                        return kCLLocationAccuracyKilometer
+                    case .ThreeKilometers:
+                        return kCLLocationAccuracyThreeKilometers
+                }
+            }
+        }
+        public init(rawValue: CLLocationAccuracy = kCLLocationAccuracyKilometer){
+            switch rawValue{
+                case kCLLocationAccuracyBestForNavigation:
+                    self = .Navigation
+                case kCLLocationAccuracyBest:
+                    self = .VeryAccurate
+                case kCLLocationAccuracyNearestTenMeters:
+                    self = .TenMeters
+                case kCLLocationAccuracyHundredMeters:
+                    self = .HundredMeters
+                case kCLLocationAccuracyKilometer:
+                    self = .Kilometer
+                case kCLLocationAccuracyThreeKilometers:
+                    self = .ThreeKilometers
+                default:
+                    self = .Kilometer
+            }
+        }
     }
 
     public enum MHLocationServiceType: Int32{
@@ -39,6 +73,17 @@ public class MHLocationManager: NSObject, CLLocationManagerDelegate{
         }
     }
 
+    public enum MHAuthorizationChangeKeys: String{
+        case Notification = "MHAuthorizationDidChangeNotification"
+        case NewStatus = "MHAuthorizationDidChangeNotificationNewStatusKey"
+    }
+
+    public enum MHLocationAuthorizationError: ErrorType{
+        case ParentallyDisabled
+        case ReasonNotSet
+        case UserDenied
+    }
+
     public enum MHLocationAuthorizationRequestResult{
         case Granted
         case Denied
@@ -48,12 +93,21 @@ public class MHLocationManager: NSObject, CLLocationManagerDelegate{
 
     private let locator = CLLocationManager()
     private var authorizationCompletion: ((result: MHLocationAuthorizationRequestResult) -> Void)? = nil
+    public var accuracy: MHLocationAccuracy{
+        set{
+            locator.desiredAccuracy = newValue.rawValue
+        }
+        get{
+            return MHLocationAccuracy(rawValue: locator.desiredAccuracy)
+        }
+    }
 
     //MARK: - Initializers
 
-    override init() {
+    init(accuracy: MHLocationAccuracy = .Kilometer) {
         super.init()
         locator.delegate = self
+        self.accuracy = accuracy
     }
 
     //MARK: - Authorization Methods
