@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C21FB801D09106800DC9F81 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C21FB7F1D09106800DC9F81 /* Keys.plist */; };
 		4C97E2A11D040300008E9D79 /* MHAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C97E2A01D040300008E9D79 /* MHAppDelegate.swift */; };
 		4C97E2A31D040300008E9D79 /* MHViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C97E2A21D040300008E9D79 /* MHViewController.swift */; };
 		4C97E2A61D040300008E9D79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C97E2A41D040300008E9D79 /* Main.storyboard */; };
@@ -14,8 +15,10 @@
 		4C97E2AB1D040300008E9D79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C97E2A91D040300008E9D79 /* LaunchScreen.storyboard */; };
 		4C97E2B61D040300008E9D79 /* NeatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C97E2B51D040300008E9D79 /* NeatTests.swift */; };
 		4C97E2C11D040300008E9D79 /* NeatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C97E2C01D040300008E9D79 /* NeatUITests.swift */; };
-		4C97E2CF1D040393008E9D79 /* MHLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C97E2CE1D040393008E9D79 /* MHLocationManager.swift */; };
+		4C97E2CF1D040393008E9D79 /* MHGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C97E2CE1D040393008E9D79 /* MHGPS.swift */; };
 		4C97E2D11D0403A8008E9D79 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C97E2D01D0403A8008E9D79 /* CoreLocation.framework */; };
+		4CE4923F1D092830008193C0 /* Underware.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6A149F1D06F18F00138D9D /* Underware.framework */; };
+		4CE492401D092830008193C0 /* Underware.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6A149F1D06F18F00138D9D /* Underware.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +38,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4CE492411D092831008193C0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4CE492401D092830008193C0 /* Underware.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4C21FB7F1D09106800DC9F81 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		4C6A149F1D06F18F00138D9D /* Underware.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Underware.framework; path = "/Users/michael/Library/Developer/Xcode/DerivedData/Neat-gfwiafgukjyuzhaeakyoozqzpfkh/Build/Products/Debug-iphoneos/Underware.framework"; sourceTree = "<absolute>"; };
 		4C97E29D1D040300008E9D79 /* Neat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C97E2A01D040300008E9D79 /* MHAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHAppDelegate.swift; sourceTree = "<group>"; };
 		4C97E2A21D040300008E9D79 /* MHViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +68,7 @@
 		4C97E2BC1D040300008E9D79 /* NeatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C97E2C01D040300008E9D79 /* NeatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeatUITests.swift; sourceTree = "<group>"; };
 		4C97E2C21D040300008E9D79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C97E2CE1D040393008E9D79 /* MHLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHLocationManager.swift; sourceTree = "<group>"; };
+		4C97E2CE1D040393008E9D79 /* MHGPS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHGPS.swift; sourceTree = "<group>"; };
 		4C97E2D01D0403A8008E9D79 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -58,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE4923F1D092830008193C0 /* Underware.framework in Frameworks */,
 				4C97E2D11D0403A8008E9D79 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +102,7 @@
 		4C97E2941D040300008E9D79 = {
 			isa = PBXGroup;
 			children = (
+				4C6A149F1D06F18F00138D9D /* Underware.framework */,
 				4C97E2D01D0403A8008E9D79 /* CoreLocation.framework */,
 				4C97E29F1D040300008E9D79 /* Neat */,
 				4C97E2B41D040300008E9D79 /* NeatTests */,
@@ -104,7 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				4C97E2A01D040300008E9D79 /* MHAppDelegate.swift */,
-				4C97E2CE1D040393008E9D79 /* MHLocationManager.swift */,
+				4C97E2CE1D040393008E9D79 /* MHGPS.swift */,
+				4C21FB7F1D09106800DC9F81 /* Keys.plist */,
 				4C97E2A21D040300008E9D79 /* MHViewController.swift */,
 				4C97E2A41D040300008E9D79 /* Main.storyboard */,
 				4C97E2A71D040300008E9D79 /* Assets.xcassets */,
@@ -142,6 +164,7 @@
 				4C97E2991D040300008E9D79 /* Sources */,
 				4C97E29A1D040300008E9D79 /* Frameworks */,
 				4C97E29B1D040300008E9D79 /* Resources */,
+				4CE492411D092831008193C0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -237,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C21FB801D09106800DC9F81 /* Keys.plist in Resources */,
 				4C97E2AB1D040300008E9D79 /* LaunchScreen.storyboard in Resources */,
 				4C97E2A81D040300008E9D79 /* Assets.xcassets in Resources */,
 				4C97E2A61D040300008E9D79 /* Main.storyboard in Resources */,
@@ -265,7 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C97E2A31D040300008E9D79 /* MHViewController.swift in Sources */,
-				4C97E2CF1D040393008E9D79 /* MHLocationManager.swift in Sources */,
+				4C97E2CF1D040393008E9D79 /* MHGPS.swift in Sources */,
 				4C97E2A11D040300008E9D79 /* MHAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,7 +432,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Neat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.hulet.michael.Neat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -419,7 +448,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Neat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.hulet.michael.Neat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -491,6 +525,7 @@
 				4C97E2C71D040300008E9D79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C97E2C81D040300008E9D79 /* Build configuration list for PBXNativeTarget "NeatTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +534,7 @@
 				4C97E2CA1D040300008E9D79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C97E2CB1D040300008E9D79 /* Build configuration list for PBXNativeTarget "NeatUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +543,7 @@
 				4C97E2CD1D040300008E9D79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
